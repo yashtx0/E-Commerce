@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="../CSS/Signin.css">
+<form action="/submit-signup" method="POST" class="signup-form">
+  <h2>Create Your Account</h2>
+  
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="Choose a unique name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="(+00) 00000-00000" required>
+  </div>
+
+  <div class="form-group">
+    <label for="address">Mailing Address</label>
+    <textarea id="address" name="address" rows="3" placeholder="Street, City, State, Zip Code" required></textarea>
+  </div>
+
+  <button type="submit" class="submit-btn">Sign Up</button>
+</form>

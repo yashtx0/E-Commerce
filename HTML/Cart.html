@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Amma-Zaan | Order Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../CSS/Portal.css">
+    
+    <style>
+        .cart-page-container {
+            max-width: 800px;
+            margin: 50px auto; 
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .cart-header {
+            border-bottom: 2px solid #fcede4;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .order-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .order-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            background-color: #fcf9f7;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .order-item-details { flex-grow: 1; }
+        .order-item-details h3 { margin: 0 0 5px 0; color: #333; }
+        .order-item-details p { margin: 0; color: #666; font-size: 16px; }
+        
+        .qty-input {
+            width: 70px;
+            padding: 10px;
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .cart-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .continue-btn {
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .checkout-btn {
+            background-color: rgb(250, 207, 150);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-heading">
+        <img src="../Images/Gemini_Generated_Image_gx2ahggx2ahggx2a-Photoroom.png" alt="Amma-Zaan Logo" class="logo"/>
+    </header>
+
+    <div class="cart-page-container">
+        <div class="cart-header">
+            <h2>Select Your Quantities</h2>
+            <p style="color: #666; margin-top: 5px;">Adjust the numbers below. Total will be calculated securely at checkout.</p>
+        </div>
+
+        <form action="#" method="POST">
+            <div class="order-item">
+                <img src="../Images/Samsung watch 5.png" alt="Watch">
+                <div class="order-item-details">
+                    <h3>Samsung Galaxy Watch 8</h3>
+                    <p>Rs. 12,499</p>
+                </div>
+                <input type="number" name="qty_watch" min="0" value="0" class="qty-input">
+            </div>
+
+            <div class="order-item">
+                <img src="../Images/Sony XM5.png" alt="Sony">
+                <div class="order-item-details">
+                    <h3>Sony WH-1000XM5</h3>
+                    <p>Rs. 8,999</p>
+                </div>
+                <input type="number" name="qty_sony" min="0" value="0" class="qty-input">
+            </div>
+
+            <div class="order-item">
+                <img src="../Images/Adidas.png" alt="Shoes">
+                <div class="order-item-details">
+                    <h3>Adidas Ultraboost 22</h3>
+                    <p>Rs. 5,999</p>
+                </div>
+                <input type="number" name="qty_adidas" min="0" value="0" class="qty-input">
+            </div>
+
+            <div class="order-item">
+                <img src="../Images/Gayming.png" alt="Mouse">
+                <div class="order-item-details">
+                    <h3>Portronics RGB Mouse</h3>
+                    <p>Rs. 2,599</p>
+                </div>
+                <input type="number" name="qty_portronics" min="0" value="0" class="qty-input">
+            </div>
+
+            <div class="order-item">
+                <img src="../Images/Women_Wear.png" alt="Watch">
+                <div class="order-item-details">
+                    <h3>Western Women Office Attire</h3>
+                    <p>Rs. 6,799</p>
+                </div>
+                <input type="number" name="qty_women" min="0" value="0" class="qty-input">
+            </div>
+            
+            <div class="order-item">
+                <img src="../Images/Men_Wear.png" alt="Watch">
+                <div class="order-item-details">
+                    <h3>Western Men Office Attire</h3>
+                    <p>Rs. 9,999</p>
+                </div>
+                <input type="number" name="qty_men" min="0" value="0" class="qty-input">
+            </div>
+
+            <div class="order-item">
+                <img src="../Images/Unisex_Watches.png" alt="Watch">
+                <div class="order-item-details">
+                    <h3>Unisex Smart Watch</h3>
+                    <p>Rs. 4,599</p>
+                </div>
+                <input type="number" name="qty_unisex" min="0" value="0" class="qty-input">
+            </div>
+
+            <div class="order-item">
+                <img src="../Images/Perfume.png" alt="Watch">
+                <div class="order-item-details">
+                    <h3>Perfume</h3>
+                    <p>Rs. 1,299</p>
+                </div>
+                <input type="number" name="qty_perfume" min="0" value="0" class="qty-input">
+            </div>
+
+            <div class="cart-actions">
+                <a href="Webpage.html" class="continue-btn">← Continue Shopping</a>
+                <button type="submit" class="checkout-btn">Proceed to Checkout →</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
