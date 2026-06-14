@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amma-zaan</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .hero {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+    }
+
+    canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .brand {
+      font-family: 'Georgia', serif;
+      font-size: clamp(36px, 8vw, 72px);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1;
+      mix-blend-mode: difference;
+      color: #fff;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: #888;
+      margin: 22px auto 20px;
+      opacity: 0.6;
+    }
+
+    .tagline {
+      font-family: 'Georgia', serif;
+      font-size: clamp(10px, 1.4vw, 12.5px);
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #fff;
+      mix-blend-mode: difference;
+      text-align: center;
+      line-height: 1.9;
+      max-width: 380px;
+      opacity: 0.82;
+    }
+
+    .btns {
+      pointer-events: all;
+      display: flex;
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      padding: 11px 36px;
+      font-family: 'Georgia', serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      background: transparent;
+      cursor: pointer;
+      border: none;
+      color: #fff;
+      mix-blend-mode: difference;
+      position: relative;
+      transition: opacity 0.2s;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      transition: border-color 0.2s;
+    }
+
+    .btn:hover::before { border-color: rgba(255, 255, 255, 1); }
+    .btn:hover { opacity: 0.85; }
+
+    @media (prefers-reduced-motion: reduce) {
+      canvas { display: none; }
+      .hero { background: #f5f5f5; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <canvas id="c"></canvas>
+    <div class="overlay">
+      <div class="brand">Amma-zaan</div>
+      <div class="divider"></div>
+      <div class="tagline">
+        Curated selection of the best products<br>
+        for those who demand excellence
+      </div>
+      <div class="btns">
+        <button class="btn" onclick="location.href='Signin.html'">Sign up</button>
+        <button class="btn" onclick="location.href='Webpage.html'">Dive in</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+let W, H, t = 0, flakes = [];
+
+function resize() {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W;
+    canvas.height = H;
+    initFlakes();
+}
+
+function getBoundaryY(x, t) {
+    const base = H * 0.5 - (x - W * 0.5);
+    return base
+        + Math.sin(x * 0.0031 + t * 0.55) * 48
+        + Math.sin(x * 0.0071 - t * 0.38) * 28
+        + Math.sin(x * 0.0178 + t * 0.62) * 13
+        + Math.sin(x * 0.0412 - t * 0.44) * 6
+        + Math.sin(x * 0.0093 + t * 0.30) * 20;
+}
+
+function spawnFlake(initial) {
+    return {
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 1.8 + 0.4,
+        cycleDur: 1.2 + Math.random() * 1.8,
+        phase: initial ? Math.random() * Math.PI * 2 : 0,
+        peakOpacity: 0.5 + Math.random() * 0.5
+    };
+}
+
+function initFlakes() {
+    flakes = [];
+    for (let i = 0; i < 220; i++) flakes.push(spawnFlake(true));
+}
+
+function draw() {
+    t += 0.018;
+
+    ctx.fillStyle = '#f5f5f5';
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.beginPath();
+    ctx.moveTo(0, H);
+
+    for (let x = 0; x <= W; x += 4) {
+        ctx.lineTo(x, getBoundaryY(x, t));
+    }
+
+    ctx.lineTo(W, H);
+    ctx.closePath();
+
+    ctx.filter = 'blur(12px)'; 
+    ctx.fillStyle = '#0a0a0a';
+    ctx.fill();
+
+    ctx.filter = 'none'; 
+
+    for (let i = 0; i < flakes.length; i++) {
+        const f = flakes[i];
+        const raw = Math.sin(t / f.cycleDur * Math.PI * 2 + f.phase);
+        const u = (raw + 1) / 2;
+        const alpha = Math.pow(u, 2.2) * f.peakOpacity;
+        
+        if (alpha < 0.01) continue;
+
+        const by = getBoundaryY(f.x, t);
+        const isBlackZone = f.y > by;
+        const lum = isBlackZone ? 250 : 10;
+
+        ctx.beginPath();
+        ctx.arc(f.x, f.y, f.r * 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${lum},${lum},${lum},${alpha * 0.1})`;
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${lum},${lum},${lum},${alpha})`;
+        ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+}
+
+resize();
+window.addEventListener('resize', resize);
+draw();
+  </script>
+</body>
+</html>
