@@ -24,3 +24,5 @@ Building "Amma Zaan" provided hands-on experience with:
 * Troubleshooting the CSS Box Model and universal selectors.
 * Managing the Document Object Model (DOM) to dynamically generate HTML structures for the shopping cart based on user data.
 * Structuring CSS logic using descendant selectors and pseudo-classes to keep the HTML clean and scalable.
+
+16/06/2026 made major changes to UI as well as added to new features. Update dropping soon
