@@ -1,26 +1,59 @@
 <link rel="stylesheet" href="../CSS/Signin.css">
-<form action="/submit-signup" method="POST" class="signup-form">
-  <h2>Create Your Account</h2>
-  
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" placeholder="Choose a unique name" required>
+
+<div class="auth-container">
+  <div class="auth-toggle">
+    <button id="btn-login" class="toggle-btn active">Log In</button>
+    <button id="btn-signup" class="toggle-btn">Sign Up</button>
   </div>
 
-  <div class="form-group">
-    <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" placeholder="email@example.com" required>
-  </div>
+  <form id="login-form" class="signup-form active-form">
+    <h2>Welcome Back</h2>
+    
+    <div class="form-group">
+      <label for="login-email">Email Address</label>
+      <input type="email" id="login-email" required>
+    </div>
 
-  <div class="form-group">
-    <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" placeholder="(+00) 00000-00000" required>
-  </div>
+    <div class="form-group">
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" required>
+    </div>
 
-  <div class="form-group">
-    <label for="address">Mailing Address</label>
-    <textarea id="address" name="address" rows="3" placeholder="Street, City, State, Zip Code" required></textarea>
-  </div>
+    <button type="submit" class="submit-btn">Log In</button>
+    <p id="login-message" class="message-box"></p>
+  </form>
 
-  <button type="submit" class="submit-btn">Sign Up</button>
-</form>
+  <form id="signup-form" class="signup-form hidden-form">
+    <h2>Create Your Account</h2>
+    
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" required>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Mailing Address</label>
+      <textarea id="address" rows="3" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Sign Up</button>
+    <p id="auth-message" class="message-box"></p>
+  </form>
+</div>
+
+<script src="../JavaScript/Auth.js"></script>
