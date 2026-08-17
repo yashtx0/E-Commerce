@@ -1,14 +1,14 @@
 <html>
     <head>
-        <title>Amma-Zaan</title>
+        <title>Atlas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../CSS/Portal.css">
+        <link rel="stylesheet" href="../CSS/Portal1.css">
+        <script src="../JavaScript/Webpage.js"></script>
     </head>
     <body>
         <header class="site-heading">
-            <img src="../Images/Gemini_Generated_Image_gx2ahggx2ahggx2a-Photoroom.png" alt="Amma-Zaan Logo" class="logo"/>
-            <a href="Cart.html" target="_blank" style="margin-left: auto;background-color: antiquewhite;padding: 10px 15px;border-radius: 4px;text-decoration: none;color: black;font-weight: bold;">CART</a>
+            <img src="../Images/atlas.png" alt="Atlas Logo" class="logo"/>
             <details class="search-dropdown">
                 <summary class="search-bar1">Click to find an item...</summary>
                 <div class="dropdown-content">
@@ -24,85 +24,46 @@
             </details>
             <div class="nav-search">
                 <a href="Signin.html" id="amazon-login" target="_blank">
-                <p>Sign In to Continue</p>
-                <strong>Account & Listing</strong>
+                    <p>Sign In to Continue</p>
+                    <strong>Account & Listing</strong>
                 </a>
             </div>
+            <a href="Cart.html" target="_blank">CART</a>
         </header>
         </div>
-        <main class="product-container">
-        <div class="product-card" id="SWatch">
-            <a href="https://amzn.in/d/01h3PO9G" target="_blank">
-            <img src="../Images/Samsung watch 5.png" alt="Watch"></a>
-            <div class="product-title">Samsung Galaxy Watch 8</div>
-            <div class="product-price">Rs.12,499</div>
-            <div class="product-description">Samsung Galaxy Watch8 (44mm, LTE, Silver) with 3nm Processor | Dual GPS | Sapphire Glass & Armor Aluminum | 5ATM & IP68 | BP, ECG, IHRN & Vascular Load Monitoring | Anti-oxidant Index</div>
-            <!-- <button class="buy-btn">Add to Cart</button> -->
+        <div class="atlas-hero-container">
+            <div class="carousel-slide active">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <span class="promo-badge">Limited Time</span>
+                        <h2>The Signature Collection</h2>
+                        <p>Elevate your everyday with up to 40% off premium accessories.</p>
+                        <a href="#" class="slide-btn">Explore Now →</a>
+                </div>
+            </div>
+
+        <div class="carousel-slide">
+            <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <span class="promo-badge" style="border-color: #fff; color: #fff;">New Arrivals</span>
+                    <h2>Precision Engineered</h2>
+                    <p>Discover the latest smart wearables designed for ultimate performance.</p>
+                    <a href="#" class="slide-btn">Shop Tech →</a>
+            </div>
         </div>
 
-        <div class="product-card" id="SHeadphones">
-            <a href="https://amzn.in/d/0aZoyBvS" target="_blank">
-            <img src="../Images/Sony XM5.png" alt="Headphones">
-            </a>
-            <div class="product-title">Sony WH-1000XM5</div>
-            <div class="product-price">Rs.8,999</div>
-            <!-- <button class="buy-btn">Add to Cart</button> -->
+        <div class="carousel-dots">
+            <span class="dot active" onclick="setSlide(0)"></span>
+            <span class="dot" onclick="setSlide(1)"></span>
         </div>
-
-        <div class="product-card" id="SShoes">
-            <a href="https://amzn.in/d/08BBigza" target="_blank">
-            <img src="../Images/Adidas.png" alt="Shoes">
-            </a>
-            <div class="product-title">Adidas Ultraboost 22</div>
-            <div class="product-price">Rs.5,999</div>
-            <!-- <button class="buy-btn">Add to Cart</button> -->
-        </div>
-
-        <div class="product-card" id="SGaming">
-            <a href="https://amzn.in/d/01mlGVJY" target="_blank">
-            <img src="../Images/Gayming.png" alt="Gaming Mouse">
-            </a>
-            <div class="product-title">Ergonomic Gaming Mouse</div>
-            <div class="product-price">Rs.2,599</div>
-            <!-- <button class="buy-btn">Add to Cart</button -->>
-        </div>
-        <div class="product-card" id="SWomen">
-            <a href="https://amzn.in/d/024aLUi6" target="_blank">
-            <img src="../Images/Women_Wear.png" alt="Women Clothes">
-            </a>
-            <div class="product-title">Western Women Office Attire</div>
-            <div class="product-price">Rs.6,799</div>
-           <!--  <button class="buy-btn">Add to Cart</button> -->
-        </div>
-        <div class="product-card" id="SMen">
-            <a href="https://amzn.in/d/0i4uI7ws" target="_blank">
-            <img src="../Images/Men_Wear.png" alt="Men Clothes">
-            </a>
-            <div class="product-title">Western Men Office Attire</div>
-            <div class="product-price">Rs.9,999</div>
-            <!-- <button class="buy-btn">Add to Cart</button> -->
-        </div>
-        <div class="product-card" id="SWatches">
-            <a href="https://amzn.in/d/06hfOC0A" target="_blank">
-            <img src="../Images/Unisex_Watches.png" alt="UNISEX Watches">
-            </a>
-            <div class="product-title">UNISEX Watches</div>
-            <div class="product-price">Rs.4,599</div>
-            <!-- <button class="buy-btn">Add to Cart</button> -->
-        </div>
-        <div class="product-card" id="SPerfumes">
-            <a href="https://amzn.in/d/03oukGxe" target="_blank">
-            <img src="../Images/Perfume.png" alt="Perfumes">
-            </a>
-            <div class="product-title">UNISEX Perfumes</div>
-            <div class="product-price">Rs.1,299</div>
-            <!-- <button class="buy-btn">Add to Cart</button> -->
-        </div>
+    </div>
+        <main class="product-container" id="product-grid">
         </main>
         <footer>
             <p>Inspired from Amazon and Apple, all credits due</p>
-            <p>&copy; 2024 Amma-Zaan. All rights reserved.</p>
+            <p>&copy; 2024 Atlas. All rights reserved.</p>
             <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSKjswknNdsQHJccDCFGKCtDFQfjgpSPzspLwSKzlDFPrFZQCNjlLcbRTcBvTLtsXsqxVKsq" target="_blank">Contact US: yash.tx0@gmail.com</a>
         </footer>
+        
     </body>
 </html>

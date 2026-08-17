@@ -1,0 +1,115 @@
+
+.cart-page-container {
+    max-width: 800px;
+    margin: 50px auto; 
+    background-color: #141414; 
+    padding: 40px;
+    border-radius: 28px; 
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+}
+
+.cart-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.cart-header h2 {
+    color: #f0f0f0;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.order-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background-color: transparent; 
+    border-radius: 8px;
+    padding: 10px;
+    filter: brightness(0.92);
+}
+
+.order-item-details { 
+    flex-grow: 1; 
+}
+
+.order-item-details h3 { 
+    margin: 0 0 8px 0; 
+    color: #f0f0f0; 
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.order-item-details p { 
+    margin: 0; 
+    color: #888; 
+    font-size: 13px;
+    letter-spacing: 0.08em;
+}
+
+.qty-input {
+    width: 70px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #0a0a0a !important; 
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #f0f0f0;
+    border-radius: 0;
+    font-family: 'Georgia', serif;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.continue-btn {
+    text-decoration: none;
+    color: #888;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.continue-btn:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.checkout-btn {
+    background-color: transparent;
+    border: 1px solid #dfb96f; 
+    color: #dfb96f;
+    padding: 12px 24px;
+    border-radius: 0;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: rgba(223, 185, 111, 0.1);
+    box-shadow: 0 0 15px rgba(223, 185, 111, 0.2);
+}

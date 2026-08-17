@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Atlas | Secure Checkout</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Images/atlas logo.png" type="image/png">
+    <link rel="stylesheet" href="../CSS/Portal1.css">
+    <link rel="stylesheet" href="../CSS/Checkout.css">
+</head>
+<body>
+    <header class="site-heading">
+        <img src="../Images/atlas.png" alt="Atlas Logo" class="logo" width="150" height="50"/>
+    </header>
+
+    <div class="checkout-container">
+        
+        <div class="checkout-form-section">
+            <h2 class="section-title">Shipping & Payment</h2>
+            
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="ship-name" required placeholder="Aman Trivedi">
+                </div>
+                
+                <div class="form-group">
+                    <label>Shipping Address</label>
+                    <textarea id="ship-address" rows="3" required placeholder="123 Atlas Street, Suite 400..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>City</label>
+                        <input type="text" id="ship-city" required>
+                    </div>
+                    <div class="form-group half">
+                        <label>Postal Code</label>
+                        <input type="text" id="ship-zip" required>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">Payment Details</h3>
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" id="card-num" required placeholder="0000 0000 0000 0000" maxlength="16">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>Expiry (MM/YY)</label>
+                        <input type="text" id="card-exp" required placeholder="12/25" maxlength="5">
+                    </div>
+                    <div class="form-group half">
+                        <label>CVV</label>
+                        <input type="password" id="card-cvv" required placeholder="***" maxlength="3">
+                    </div>
+                </div>
+
+                <button type="submit" class="place-order-btn" id="submit-btn">Place Order Securely</button>
+                <p id="checkout-message" class="message-box"></p>
+            </form>
+        </div>
+
+        <div class="checkout-summary-section">
+            <h2 class="section-title">Order Summary</h2>
+            <div id="summary-items-container">
+                <p style="color: #888; font-size: 13px;">Loading your items...</p>
+            </div>
+            
+            <div class="summary-totals">
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span id="summary-subtotal">Rs. 0</span>
+                </div>
+                <div class="total-row">
+                    <span>Shipping</span>
+                    <span style="color: #dfb96f;">Complimentary</span>
+                </div>
+                <div class="total-row grand-total">
+                    <span>Total</span>
+                    <span id="summary-total">Rs. 0</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../JavaScript/Checkout.js"></script>
+</body>
+</html>
