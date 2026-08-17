@@ -1,8 +1,8 @@
 # E-Commerce
 A lightweight E-commerce website clone which includes all the language for full stack - HTML, CSS, JavaScript, PHP, MySQL and XML
 
-# 🛒 Amma Zaan: E-Commerce UI
-
+# 🛒 Atlas: E-Commerce UI  //formerly Amma-Zaan.
+ 
 A lightweight, fully responsive e-commerce storefront clone. This project was built from scratch to demonstrate a strong engineering foundation in modern front-end web development, focusing on clean UI/UX principles and seamless user interactions without relying on heavy external frameworks like Bootstrap or Tailwind.
 
 ## ✨ Key Features
@@ -26,3 +26,4 @@ Building "Amma Zaan" provided hands-on experience with:
 * Structuring CSS logic using descendant selectors and pseudo-classes to keep the HTML clean and scalable.
 
 16/06/2026 made major changes to UI as well as added to new features. Update dropping soon
+17/08/2026 - UI changes and DB as added feature.
